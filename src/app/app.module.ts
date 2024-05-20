@@ -26,6 +26,9 @@ import { BsbyComponent } from './dashboard/bsby/bsby.component';
 import { RoleListComponent } from './role-list/role-list.component';
 import { AllusersComponent } from './allusers/allusers.component';
 import { RoleassignmentComponent } from './roleassignment/roleassignment.component';
+import { UserprofileformComponent } from './userprofileform/userprofileform.component';
+import { UserprofileComponent } from './userprofile/userprofile.component';
+import { UserRoleComponent } from './user-role/user-role.component';
 
 
 @NgModule({
@@ -43,7 +46,10 @@ import { RoleassignmentComponent } from './roleassignment/roleassignment.compone
     BsbyComponent,
     RoleListComponent,
     AllusersComponent,
-    RoleassignmentComponent
+    RoleassignmentComponent,
+    UserprofileformComponent,
+    UserprofileComponent,
+    UserRoleComponent
     
   ],
   imports: [

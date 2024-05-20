@@ -11,9 +11,12 @@ import { Federal } from './federalmodel.component';
 })
 export class FederalComponent {
   federalForm!: FormGroup;
+  isTitleRequired:boolean = true;
+
   constructor(private formBuilder: FormBuilder, private federalService: FederalService,private snackbar:MatSnackBar) {}
   ngOnInit(): void {
     this.initializeForm();
+    this.isTitleRequired=true;
   }
 
   initializeForm(): void {

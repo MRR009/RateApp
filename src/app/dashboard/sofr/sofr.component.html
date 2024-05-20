@@ -1,48 +1,125 @@
-<p>heloo</p>
-
-<div class="container">
-    <h1 class="title">Sofr component</h1>
-  
-    <div class="row">
+<!-- <div class="container">
+  <h1 class="title">Sofr component</h1>
+  <div class="row">
       <div class="col-lg-6">
-        <form class="form" [formGroup]="sofrForm" (ngSubmit)="addSofr()">
-  
-            <div class="form-group">
-                <label for="description">Description:</label>
-                <input type="text" id="description" name="description" class="form-control" formControlName="description">
+          <form class="form" [formGroup]="sofrForm" (ngSubmit)="addSofr()">
+              <div class="form-group">
+                  <label for="description" class="label">Description:</label>
+                  <input type="text" id="description" name="description" class="form-control" formControlName="description">
               </div>
-          
-            <div class="form-group">
-            <label for="indexNumber">Index Number:</label>
-            <input type="number" id="indexNumber" name="indexNumber" class="form-control" formControlName="indexNumber">
-          </div>
-
-          <div class="form-group">
-            <label for="floor">Floor:</label>
-            <input type="number" id="floor" name="floor" class="form-control" formControlName="floor">
-          </div>
-
-          <div class="form-group">
-            <label for="spread">Spread:</label>
-            <input type="number" id="spread" name="spread" class="form-control" formControlName="spread">
-          </div>
-
-          <div class="form-group">
-            <label for="isa">ISA:</label>
-            <input type="number" id="isa" name="isa" class="form-control" formControlName="isa">
-          </div>
-          <div class="form-group">
-            <label for="term">Term:</label>
-            <input type="number" id="term" name="term" class="form-control" formControlName="term">
-          </div>
-          
-          <div class="form-group">
-            <label for="rateId">rateId:</label>
-            <input type="number" id="rateId" name="rateId" class="form-control" formControlName="rateId">
-          </div>
-          <button type="submit" class="btn">Add Sofr</button>
-        </form>
+              <div class="form-group">
+                  <label for="indexNumber" class="label">Index Number:</label>
+                  <input type="number" id="indexNumber" name="indexNumber" class="form-control" formControlName="indexNumber">
+              </div>
+              <div class="form-group">
+                  <label for="floor" class="label">Floor:</label>
+                  <input type="number" id="floor" name="floor" class="form-control" formControlName="floor">
+              </div>
+              <div class="form-group">
+                  <label for="spread" class="label">Spread:</label>
+                  <input type="number" id="spread" name="spread" class="form-control" formControlName="spread">
+              </div>
+              <div class="form-group">
+                  <label for="isa" class="label">ISA:</label>
+                  <input type="number" id="isa" name="isa" class="form-control" formControlName="isa">
+              </div>
+              <div class="form-group">
+                  <label for="term" class="label">Term:</label>
+                  <input type="number" id="term" name="term" class="form-control" formControlName="term">
+              </div>
+              <div class="form-group">
+                  <label for="rateId" class="label">rateId:</label>
+                  <input type="number" id="rateId" name="rateId" class="form-control" formControlName="rateId">
+              </div>
+              <button type="submit" class="btn">Add Sofr</button>
+          </form>
       </div>
+  </div>
+</div> -->
+
+
+<!-- example -->
+
+
+<div>
+    <h1 class="title">Sofr component</h1>
+    <form  [formGroup]="sofrForm" (ngSubmit)="addSofr()">
+    <div class="container1">
+     
+       <!-- <div class="column">
+        <div style=" display: flex; width: 50%;">
+          <label for="description" class="label">Description  </label>
+          <span *ngIf="isTitleRequired" class="red-star">*</span>
+        </div>
+        <input type="text" id="description" name="description" class="form-control" formControlName="description">
+       </div> -->
+
+       <div class="column">
+        <div style=" display: flex; width: 60%;">
+          <label for="indexNumber" class="label">Index Number</label>
+          <span *ngIf="isTitleRequired" class="red-star">*</span>
+        </div>
+        <input type="number" id="indexNumber" name="indexNumber" class="form-control" formControlName="indexNumber">
+      </div>
+  
+     
+  
+  
+  
+      <div class="column">
+        <div style=" display: flex; width: 30%;">
+          <label for="floor" class="label">Floor:</label>
+        </div>
+        <input type="number" id="floor" name="floor" class="form-control" formControlName="floor">
+        <i class="fa-solid fa-percent"  style="color: #2a2b38; display: flex;flex-direction: column;justify-content: center;"></i>
+      </div>
+
+      <div class="column">
+        <div style=" display: flex; width: 50%;">
+          <label for="term" class="label">Term:</label>
+        </div>
+        <input type="number" id="term" name="term" class="form-control" formControlName="term">
+        <i class="fa-solid fa-percent"  style="color: #2a2b38; display: flex;flex-direction: column;justify-content: center;"></i>
+      </div>
+
+      <div class="column">
+        <div style=" display: flex; width: 60%;">
+          <label for="isa" class="label">ISA:</label>
+        </div>
+        <input type="number" id="isa" name="isa" class="form-control" formControlName="isa">
+        <i class="fa-solid fa-percent"  style="color: #2a2b38; display: flex;flex-direction: column;justify-content: center;"></i>
+      </div>
+  
+      <div class="column">
+        <div style=" display: flex; width: 30%;">
+          <label for="spread" class="label">Spread:</label>
+        </div>
+        <input type="number" id="spread" name="spread" class="form-control" formControlName="spread">
+        <i class="fa-solid fa-percent" style="color: #2a2b38; display: flex;flex-direction: column;justify-content: center;"></i>
+      </div>
+
+       <div class="column">
+        <div style=" display: flex; width: 50%;">
+          <label for="rateId" class="label">Rate Id</label>
+          <span *ngIf="isTitleRequired" class="red-star">*</span>
+        </div>
+        <input type="number" id="rateId" name="rateId" class="form-control" formControlName="rateId">
+      </div>
+   
     </div>
+    <!-- <button type="submit" class="btn">Add Sofr</button> -->
+    <div class="column">
+      <div style=" display: flex; width: 13%;">
+        <label for="description" class="label">Description  </label>
+        <span *ngIf="isTitleRequired" class="red-star">*</span>
+      </div>
+      <textarea id="description" name="description" rows="4"  class="form-control" formControlName="description"></textarea>
+      <!-- <input type="text" id="description" name="description" class="form-control" formControlName="description"> -->
+     </div>
+  </form>
   </div>
   
+
+
+
+

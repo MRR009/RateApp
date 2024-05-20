@@ -1,0 +1,137 @@
+.menu-bar {
+  
+  color:white;
+  background-color: #007bff;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* position: fixed; */
+  /* width: 100%; */
+  /* top: 0; */
+  /* z-index: 1000; */
+}
+.system-heading {
+  margin: 0;
+  padding: 1px;
+}
+table {
+    width: 100%;
+    height: 100%;
+    margin-top: 30px;
+    color: blue;
+  }
+  .filter-container {
+    display: flex;
+    justify-content:center; 
+    padding-right: 20px;
+  }
+  .filter-input {
+    border: 1px solid #8d8b94; 
+    border-radius: 5px; 
+    padding: 5px 10px; /* Optional: Add padding */
+    height: 30px;
+    width: 500px;
+    /* position: absolute; */
+    /* transform: translateY(100%); */
+  }
+  
+  .search-icon {
+    position: absolute; /* Set position to absolute */
+    right: 450px; /* Adjust position to the right */
+    top: 15%; /* Align icon vertically */
+    transform: translateY(-150%); /* Adjust for vertical alignment */
+    color: black; /* Optional: Adjust icon color */
+  }
+  /* Adjust the widths of td and th */
+td, th {
+
+    flex-grow: 1; /* Allow columns to grow equally */
+    overflow: hidden; /* Ensure contents don't overflow */
+    text-overflow: ellipsis; /* Optional: Add ellipsis for long text */
+    height: 34px;
+  }
+  
+  /* Apply flexbox layout to table cells */
+  .mat-row, .mat-header-row {
+    display: flex;
+    height: 56px;
+
+  }
+  
+  
+  .mat-cell, .mat-header-cell {
+  padding-top: 2%; /* Decrease top padding */
+  padding-bottom: 8px; /* Decrease bottom padding */
+  font-size: 67px; 
+  }
+  
+  
+  th.mat-header-cell.fullName,
+  td.mat-cell.fullName {
+    flex-basis: 20%; 
+    padding: 5%;
+  }
+  
+  th.mat-header-cell.obligorNumber,
+  td.mat-cell.obligorNumber {
+    flex-basis: 15%; 
+  }
+  
+  th.mat-header-cell.requestor,
+  td.mat-cell.requestor {
+    flex-basis: 15%; 
+    color: blue;
+  }
+  
+  th.mat-header-cell.assignedTo,
+  td.mat-cell.assignedTo {
+    flex-basis: 15%;
+    background-color: red; /* Adjust the width as needed */
+  }
+  
+  th.mat-header-cell.dateOfRequest,
+  td.mat-cell.dateOfRequest {
+    flex-basis: 15%; /* Adjust the width as needed */
+  }
+  
+  th.mat-header-cell.timeframe,
+  td.mat-cell.timeframe,
+  th.mat-header-cell.status,
+  td.mat-cell.status,
+  th.mat-header-cell.edit,
+  td.mat-cell.edit {
+    flex-basis: 10%;
+   
+    line-height: 2px; /* Adjust the width as needed */
+  }
+
+  mat-sort-header-container {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    bottom: 55%;
+    background-color: blue;
+    letter-spacing: normal;
+    outline: 0 
+    
+  }
+
+  .mat-mdc-table thead, .mat-mdc-header-row, .mat-mdc-table .mat-mdc-header-cell{
+    height: 30px;
+
+  }
+
+  .mat-mdc-table thead{
+    height: 50px;
+  }
+  .mat-mdc-table{
+    top: 55%;
+  }
+
+ .z1{
+    bottom: 55%;
+
+  }
+  
+  

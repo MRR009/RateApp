@@ -11,6 +11,11 @@ import { SignupComponent } from './user/signup/signup.component';
 import { RoleListComponent } from './role-list/role-list.component';
 import { AllusersComponent } from './allusers/allusers.component';
 import { RoleassignmentComponent } from './roleassignment/roleassignment.component';
+import { RateinfoComponent } from './rateform/rateinfo/rateinfo.component';
+import { UserprofileComponent } from './userprofile/userprofile.component';
+import { UserRoleComponent } from './user-role/user-role.component';
+
+
 
 const routes: Routes = [ { path: '', redirectTo: 'allroles', pathMatch: 'full' },
 { path: 'home', component: SignupComponent},
@@ -23,6 +28,9 @@ const routes: Routes = [ { path: '', redirectTo: 'allroles', pathMatch: 'full' }
 {path:'allroles',component:RoleListComponent},
 {path:'allusers',component:AllusersComponent},
 {path:'roleassign',component:RoleassignmentComponent},
+{path: 'rateinfo', component:RateinfoComponent},
+{path:'userprofileform',component:UserprofileComponent},
+{path:'useraccess',component:UserRoleComponent},
 { path: 'dashboard', component: PreparerdashboardComponent},];
 
 @NgModule({

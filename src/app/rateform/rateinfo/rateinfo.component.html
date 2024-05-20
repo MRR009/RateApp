@@ -1,27 +1,144 @@
-<p>rateinfo works!</p>
-<form>
-    <label for="name">Name:</label>
-    <input type="text" id="name" formControlName="name">
-    <div >
-      Name is required.
-    </div>
-  
-    <label for="email">Email:</label>
-    <input type="email" id="email" formControlName="email">
-  </form>
-
-  <form >
-    <div >
-      <div  >
-        <label>Street:</label>
-        <input formControlName="street">
-  
-        <label>City:</label>
-        <input formControlName="city">
-  
-        <!-- <button (click)="removeAddress(i)">Remove</button> -->
+<div class="background-container">
+  <h1 class="title">LTS New Rate Index Request</h1>
+  <form  [formGroup]="primeForm" (ngSubmit)="addPrime()">
+  <div class="container1">
+   
+     <div class="column">
+      <div style=" display: flex; width: 50%;">
+        <label for="preaperdBy" class="label">Prepared By </label>
+        <span *ngIf="isTitleRequired" class="red-star"> * </span>
       </div>
+     
+      <input type="text" id="preaperdBy" name="preaperdBy" class="form-control" formControlName="preaperdBy">
+     </div>
+     <div class="column">
+      <div style=" display: flex; width: 60%;">
+        <label for="dateOfPrepared" class="label">Date Of Prepared</label>
+        <span *ngIf="isTitleRequired" class="red-star">*</span>
+      </div>
+      <input type="date" id="dateOfPrepared" name="dateOfPrepared" class="form-control" formControlName="dateOfPrepared">
     </div>
-  
-    <!-- <button (click)="addAddress()">Add Address</button> -->
-  </form>
+    <div class="column">
+      <div style=" display: flex; width: 60%;">
+        <label for="customerName" class="label">Customer Name</label>
+        <span *ngIf="isTitleRequired" class="red-star">*</span>
+      </div>
+      <input type="text" id="customerName" name="customerName" class="form-control" formControlName="customerName">
+    </div>
+    <div class="column">
+      <div style=" display: flex; width: 50%;">
+        <label for="obligor" class="label">Obligor#</label>
+        <span *ngIf="isTitleRequired" class="red-star">*</span>
+      </div>
+      <input type="number" id="obligor" name="obligor" class="form-control" formControlName="obligor">
+    </div>
+    <div class="column">
+      <div style=" display: flex; width: 60%;">
+        <label for="obligations" class="label">Obligation(s)</label>
+        <span *ngIf="isTitleRequired" class="red-star">*</span>
+      </div>
+      <input type="number" id="obligations" name="obligations" class="form-control" formControlName="obligations">
+    </div>
+    <div class="column">
+      <div style=" display: flex; width: 60%;">
+        <label for="nextBillDate" class="label">Next Interest Bill Due Date</label>
+        <span *ngIf="isTitleRequired" class="red-star">*</span>
+      </div>
+      <input type="date" id="nextBillDate" name="nextBillDate" class="form-control" formControlName="nextBillDate">
+    </div>
+    <div class="column">
+      <div style=" display: flex; width: 50%;">
+        <label for="leadDays" class="label">Lead Days</label>
+        <span *ngIf="isTitleRequired" class="red-star">*</span>
+      </div>
+      <input type="date" id="leadDays" name="leadDays" class="form-control" formControlName="leadDays">
+    </div>
+   
+    <div class="column">
+      <div style=" display: flex; width: 60%;">
+        <label for="status" class="label">Status</label>
+      </div>
+      <input  type="text" id="status" name="status" class="form-control" formControlName="status" >
+    </div>
+ 
+  </div>
+ 
+  <!-- <div class="form-group" enctype="multipart/form-data">
+    <label for="file">Attachmnets:</label>
+   
+    <input type="file" id="files" formControlName="files" multiple (change)="onFileChanged($event)" />
+  </div> -->
+ 
+  <div class="col-12">
+    <div class="mb-3">
+        <label for="attachments" class="form-label">Attachments:</label>
+        <input type="file" class="form-control" id="attachments" #fileInput multiple (change)="onFileSelected($event)"  formControlName="attachments"  value = "selectedFiles.length ">
+        <small id="attachmentsHelp" class="form-text text-muted" >You can attach multiple files.</small>
+    </div>
+    <div *ngIf="selectedFiles.length > 0" class="mb-3">
+        <label class="form-label">Selected Files:</label>
+       
+        <ul class="list-group col-4">
+ 
+            <li *ngFor="let file of selectedFiles; let i = index row"
+                class="list-group-item d-flex justify-content-between align-items-center">
+               
+               
+             
+                <span>{{ file.name }}</span>
+                <span role="button" (click)="removeFile(i)" class="remove-file-icon">&times;</span>
+            </li>
+        </ul>
+     
+    </div>
+</div>
+  <!-- <button type="submit" class="btn">Save</button> -->
+</form>
+<h1 class="title">LTS New Rate Index Request</h1>
+ 
+ 
+ 
+ 
+ 
+<!-- <div class="checkbox-wrapper-1">
+  <input id="example-1" class="substituted" type="checkbox" aria-hidden="true" />
+  <label for="example-1">Checkbox</label>
+</div> -->
+ 
+<div class="container">
+  <div class="row">
+      <div class=" col-4" *ngFor="let checkbox of checkboxes">
+          <div class="checkbox-wrapper-1">
+            <input [id]="checkbox.id" class="substituted" type="checkbox" aria-hidden="true"  [checked]="checkbox.checked" (change)="toggleCheckbox(checkbox)"/>
+            <label [for]="checkbox.id">{{ checkbox.label }}</label>
+          </div>
+      </div>
+  </div>
+</div>
+<div *ngFor="let checkbox of checkboxes">
+  <ng-container *ngIf="checkbox.label === 'Prime Component' && checkbox.checked">
+    <app-prime></app-prime>
+  </ng-container>
+ 
+  <ng-container *ngIf="checkbox.label === 'Federal Funds Component' && checkbox.checked">
+    <app-federal></app-federal>
+  </ng-container>
+ 
+  <ng-container *ngIf="checkbox.label === 'LIBOR Comoponent' && checkbox.checked">
+    <app-libor></app-libor>
+  </ng-container>
+ 
+  <ng-container *ngIf="checkbox.label === 'BSBY Component' && checkbox.checked">
+    <app-bsby></app-bsby>
+  </ng-container>
+ 
+  <ng-container *ngIf="checkbox.label === 'SOFR Component' && checkbox.checked">
+    <app-sofr></app-sofr>
+  </ng-container>
+ 
+  <ng-container *ngIf="checkbox.label === 'Rate Includes Overall Floor Or Ceiling' && checkbox.checked">
+    <app-ceiling></app-ceiling>
+  </ng-container>
+</div>
+ 
+</div>

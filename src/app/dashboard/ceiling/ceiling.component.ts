@@ -11,9 +11,12 @@ import { Ceiling } from './ceilingmodel.component';
 })
 export class CeilingComponent {
   ceilingForm!: FormGroup;
+  isTitleRequired:boolean = true;
+
   constructor(private formBuilder: FormBuilder, private ceilingService: CeilingService,private snackbar:MatSnackBar) {}
   ngOnInit(): void {
     this.initializeForm();
+    this.isTitleRequired=true;
   }
 
   initializeForm(): void {

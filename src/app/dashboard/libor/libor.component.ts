@@ -11,6 +11,7 @@ import { Libor } from './libormodel.component';
 })
 export class LiborComponent {
   liborForm!: FormGroup;
+  isTitleRequired:boolean = true;
   
 
 
@@ -18,6 +19,7 @@ export class LiborComponent {
 
   ngOnInit(): void {
     this.initializeForm();
+    this.isTitleRequired=true;
   }
 
   initializeForm(): void {

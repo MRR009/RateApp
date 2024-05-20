@@ -11,6 +11,8 @@ import { Sofr } from './sofrmodel.component';
 })
 export class SofrComponent {
   sofrForm!: FormGroup;
+  isTitleRequired:boolean = true;
+  astrick:any= '<span  class="red-star">*</span>';
   
 
 
@@ -18,6 +20,7 @@ export class SofrComponent {
 
   ngOnInit(): void {
     this.initializeForm();
+    this.isTitleRequired=true;
   }
 
   initializeForm(): void {
@@ -30,6 +33,7 @@ export class SofrComponent {
       term: [0, Validators.required],
       isa: [0, Validators.required]
     });
+   
   }
 
   addSofr(): void {

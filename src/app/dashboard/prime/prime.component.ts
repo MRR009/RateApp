@@ -12,13 +12,14 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class PrimeComponent {
   primeForm!: FormGroup;
-  
-
+  hideRateIdField: boolean = false;
+  isTitleRequired:boolean = true;
 
   constructor(private formBuilder: FormBuilder, private primeService: PrimeService,private snackbar:MatSnackBar) {}
 
   ngOnInit(): void {
     this.initializeForm();
+    this.isTitleRequired = true;
   }
 
   initializeForm(): void {
@@ -27,12 +28,14 @@ export class PrimeComponent {
       indexNumber:[0, Validators.required],
       spread: [0, Validators.required],
       floor:  [0, Validators.required],
-      rateId: [0, Validators.required]
+      rateId: [1, Validators.required]
     });
+    // this.isTitleRequired = this.primeForm.value.bankName.hasValidator(Validators.required);
   }
+   
 
   addPrime(): void {
-    console.log(this.primeForm.value.studentUgId)
+    console.log(this.primeForm.value.rateId)
     if (this.primeForm.valid) {
       const newPrime: Prime = {
         bankName: this.primeForm.value.bankName,

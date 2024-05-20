@@ -31,6 +31,12 @@ export class SignupComponent{
       email: ['', [Validators.required]],
       password: ['', Validators.required],
     });
+    {
+      this.loginForm = this.formBuilder.group({
+        email: ['', [Validators.required, Validators.email]],
+        password: ['', Validators.required]
+      });
+    }
   }
 ngOnInit(){
   this.loginForm = this.formBuilder.group({
@@ -57,10 +63,10 @@ ngOnInit(){
         fullName: this.registrationForm.value.fullName,
         email: this.registrationForm.value.email,
         password: this.registrationForm.value.password,
-        role: 'user',
+        role: 'preparer',
         loggedin: true
       };
-
+// console.log(userData)
       this.userService.createUser(userData).subscribe(
         (data) => {
           console.log('User registered successfully:', data);
@@ -76,28 +82,51 @@ ngOnInit(){
     }
   }
 
+
+  // onSignIn() {
+  //   console.log("Method called")
+  //   if (this.loginForm.valid) {
+  //     const userLogin: UserLogin = {
+  //       email: this.loginForm.value.email,
+  //       password: this.loginForm.value.password,
+  //     };
+  //     console.log(userLogin)
   
+  //     this.userService.loginUser(userLogin).subscribe(
+  //       (response) => {
+  //         console.log('User logged in successfully:', response);
+  //         // Redirect to dashboard or handle success
+  //         this.router.navigateByUrl('/allusers');
+  //       },
+  //       (error) => {
+  //         console.error('Error logging in:', error);
+  //         // Display error message to user
+  //         this.errorMessage = 'Incorrect email or password';
+  //       }
+  //     );
+  //   }
+
+  //}
   onSignIn() {
     if (this.loginForm.valid) {
       const userLogin: UserLogin = {
         email: this.loginForm.value.email,
-        password: this.loginForm.value.password,
+        password: this.loginForm.value.password
       };
-  
+
       this.userService.loginUser(userLogin).subscribe(
         (response) => {
           console.log('User logged in successfully:', response);
           // Redirect to dashboard or handle success
-          this.router.navigateByUrl('/allusers');
+          this.router.navigateByUrl('/dashboard');
         },
         (error) => {
           console.error('Error logging in:', error);
           // Display error message to user
-          this.errorMessage = 'Incorrect email or password';
+          this.errorMessage = error;
         }
       );
     }
-
   }
   togglePasswordVisibility() {
     this.hide = !this.hide;

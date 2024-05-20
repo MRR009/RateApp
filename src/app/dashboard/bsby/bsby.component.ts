@@ -11,6 +11,7 @@ import { Bsby } from './bsbymodel.component';
 })
 export class BsbyComponent {
   bsbyForm!: FormGroup;
+  isTitleRequired:boolean = true;
   
 
 
@@ -18,6 +19,8 @@ export class BsbyComponent {
 
   ngOnInit(): void {
     this.initializeForm();
+    this.isTitleRequired = true;
+    
   }
 
   initializeForm(): void {

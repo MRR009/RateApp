@@ -1,4 +1,4 @@
-<p>heloo</p>
+<!-- <p>heloo</p>
 
 <div class="container">
     <h1 class="title">Libor component</h1>
@@ -44,5 +44,86 @@
         </form>
       </div>
     </div>
+  </div>
+   -->
+
+
+   <div>
+    <h1 class="title">Libor component</h1>
+    <form  [formGroup]="liborForm" (ngSubmit)="addLibor()">
+    <div class="container1">
+     
+       <!-- <div class="column">
+        <div style=" display: flex; width: 50%;">
+          <label for="description" class="label">Description  </label>
+          <span *ngIf="isTitleRequired" class="red-star">*</span>
+        </div>
+        <input type="text" id="description" name="description" class="form-control" formControlName="description">
+       </div> -->
+  
+       <div class="column">
+        <div style=" display: flex; width: 60%;">
+          <label for="indexNumber" class="label">Index Number</label>
+          <span *ngIf="isTitleRequired" class="red-star">*</span>
+        </div>
+        <input type="number" id="indexNumber" name="indexNumber" class="form-control" formControlName="indexNumber">
+      </div>
+  
+     
+  
+  
+  
+      <div class="column">
+        <div style=" display: flex; width: 30%;">
+          <label for="floor" class="label">Floor:</label>
+        </div>
+        <input type="number" id="floor" name="floor" class="form-control" formControlName="floor">
+        <i class="fa-solid fa-percent"  style="color: #2a2b38; display: flex;flex-direction: column;justify-content: center;"></i>
+      </div>
+
+      <div class="column">
+        <div style=" display: flex; width: 50%;">
+          <label for="term" class="label">Term:</label>
+        </div>
+        <input type="number" id="term" name="term" class="form-control" formControlName="term">
+        <i class="fa-solid fa-percent"  style="color: #2a2b38; display: flex;flex-direction: column;justify-content: center;"></i>
+      </div>
+
+      <div class="column">
+        <div style=" display: flex; width: 60%;">
+          <label for="isa" class="label">ISA:</label>
+        </div>
+        <input type="number" id="isa" name="isa" class="form-control" formControlName="isa">
+        <i class="fa-solid fa-percent"  style="color: #2a2b38; display: flex;flex-direction: column;justify-content: center;"></i>
+      </div>
+  
+      <div class="column">
+        <div style=" display: flex; width: 30%;">
+          <label for="spread" class="label">Spread:</label>
+        </div>
+        <input type="number" id="spread" name="spread" class="form-control" formControlName="spread">
+        <i class="fa-solid fa-percent" style="color: #2a2b38; display: flex;flex-direction: column;justify-content: center;"></i>
+      </div>
+
+       <div class="column">
+        <div style=" display: flex; width: 50%;">
+          <label for="rateId" class="label">Rate Id</label>
+          <span *ngIf="isTitleRequired" class="red-star">*</span>
+        </div>
+        <input type="number" id="rateId" name="rateId" class="form-control" formControlName="rateId">
+      </div>
+   
+    </div>
+    <!-- <button type="submit" class="btn">Add Libor</button> -->
+    <div class="column">
+      <div style=" display: flex; width: 13%;">
+        <label for="description" class="label">Description  </label>
+        <span *ngIf="isTitleRequired" class="red-star">*</span>
+      </div>
+      <textarea id="description" name="description" rows="4"  class="form-control" formControlName="description"></textarea>
+      <!-- <input type="text" id="description" name="description" class="form-control" formControlName="description"> -->
+     </div>
+     
+  </form>
   </div>
   

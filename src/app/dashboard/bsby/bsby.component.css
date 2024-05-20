@@ -1,41 +1,48 @@
 /* Custom styles */
 @import "~bootstrap/dist/css/bootstrap.min.css";
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5; /* Adding a background color to the container */
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1); /* Adding a subtle shadow */
-  }
-  
-  .title {
-    text-align: center;
-    color: #333;
-    background-position-x: center;
-    background-color: gray;
-    bottom: 4;
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+ 
+ 
+ 
+.title {
+  text-align: center;
+  color:#ffffff;
+  background-position-x: center;
+  font-size: 20px;
+  background-color:#0771d4;
+  bottom: 4;
+  padding: 10px;
 
 
-    margin-bottom: 30px; /* Increased spacing below the title */
-  }
-  
-  .form {
-    margin-bottom: 30px; /* Increased spacing below the form */
-  }
-  
+  margin-bottom: 30px; /* Increased spacing below the title */
+}
+ 
+ 
+ 
   .form-group {
-    margin-bottom: 20px; /* Adjusted margin for form groups */
+    flex: 1 0 calc(33.33% - 20px); /* Three columns with 20px gap */
   }
-  
+ 
+  @media (max-width: 992px) {
+    .form-group {
+      flex: 1 0 calc(50% - 20px); /* Two columns with 20px gap for medium screens */
+    }
+  }
+ 
+  /* .f{
+    width: 10%;
+    background-color: #0056b3;
+  } */
   .form-control {
     width: 100%;
-    padding: 10px;
+    height: 60%;
+    padding: 8px;
     font-size: 16px;
     border-radius: 4px;
-    border: 1px solid #ccc;
+    border: 1px solid #0056b3;
+    margin-top: 2%;
   }
-  
+ 
   .btn {
     padding: 12px 24px;
     font-size: 16px;
@@ -46,30 +53,44 @@
     cursor: pointer;
     transition: background-color 0.3s ease; /* Smooth hover transition */
   }
-  
+ 
   .btn:hover {
     background-color: #0056b3;
   }
-  
-  .subtitle {
-    margin-bottom: 20px; /* Adjusted spacing below subtitles */
-    font-size: 24px; /* Increased font size for subtitles */
-    color: #333;
-  }
-  
-  .prime-list {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .prime-item {
-    margin-bottom: 12px; /* Adjusted margin for student items */
-    padding: 12px;
-    background-color: #fff;
-    border-radius: 6px;
-    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.1); /* Adding a shadow to items */
-  }
-  
-  /* Import Bootstrap */
+   
+  /* new css  */
  
-  
+  .container1{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+     text-align: center;
+     
+    /* width: 20%; */
+    /* background-color: #cccccc; */
+   
+   
+  }
+  .column {
+    padding: 6px;
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+    /* background-color: #cccccc; */
+  }
+ .label{
+    width: 75%;
+  /* background-color: #cccccc; */
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   text-align: left;
+ }
+ 
+ .red-star {
+  color: red;
+  display: flex;
+   flex-direction: column;
+   justify-content: center;
+   text-align: left;
+  /* background-color: aqua; */
+}

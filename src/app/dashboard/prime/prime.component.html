@@ -1,40 +1,49 @@
-<p>heloo</p>
-
-<div class="container">
-    <h1 class="title">Prime component</h1>
-  
-    <div class="row">
-      <div class="col-lg-6">
-        <form class="form" [formGroup]="primeForm" (ngSubmit)="addPrime()">
-  
-            <div class="form-group">
-                <label for="bankName">Bank Name:</label>
-                <input type="text" id="bankName" name="bankName" class="form-control" formControlName="bankName">
-              </div>
-          
-            <div class="form-group">
-            <label for="indexNumber">Index Number:</label>
-            <input type="number" id="indexNumber" name="indexNumber" class="form-control" formControlName="indexNumber">
-          </div>
-
-          <div class="form-group">
-            <label for="floor">Floor:</label>
-            <input type="number" id="floor" name="floor" class="form-control" formControlName="floor">
-          </div>
-
-          <div class="form-group">
-            <label for="spread">Spread:</label>
-            <input type="spread" id="spread" name="spread" class="form-control" formControlName="spread">
-          </div>
-
-          
-          <div class="form-group">
-            <label for="rateId">rateId:</label>
-            <input type="rateId" id="rateId" name="rateId" class="form-control" formControlName="rateId">
-          </div>
-          <button type="submit" class="btn">Add Prime</button>
-        </form>
+<div>
+  <h1 class="title">Prime component</h1>
+  <form  [formGroup]="primeForm" (ngSubmit)="addPrime()">
+  <div class="container1">
+   
+     <div class="column">
+      <div style=" display: flex; width: 50%;">
+        <label for="bankName" class="label">Bank Name  </label>
+        <span *ngIf="isTitleRequired" class="red-star">*</span>
       </div>
+      <input type="text" id="bankName" name="bankName" class="form-control" formControlName="bankName">
+     </div>
+
+     <div class="column">
+      <div style=" display: flex; width: 60%;">
+        <label for="indexNumber" class="label">Index Number</label>
+        <span *ngIf="isTitleRequired" class="red-star">*</span>
+      </div>
+      <input type="number" id="indexNumber" name="indexNumber" class="form-control" formControlName="indexNumber">
     </div>
+
+    <div class="column">
+      <div style=" display: flex; width: 60%;">
+        <label for="rateId" class="label">Rate Id</label>
+        <span *ngIf="isTitleRequired" class="red-star">*</span>
+      </div>
+      <input type="number" id="rateId" name="rateId" class="form-control" formControlName="rateId">
+    </div>
+
+    <div class="column">
+      <div style=" display: flex; width: 50%;">
+        <label for="floor" class="label">Floor:</label>
+      </div>
+      <input type="number" id="floor" name="floor" class="form-control" formControlName="floor">
+      <i class="fa-solid fa-percent"  style="color: #2a2b38; display: flex;flex-direction: column;justify-content: center;"></i>
+    </div>
+
+    <div class="column">
+      <div style=" display: flex; width: 60%;">
+        <label for="spread" class="label">Spread:</label>
+      </div>
+      <input type="number" id="spread" name="spread" class="form-control" formControlName="spread">
+      <i class="fa-solid fa-percent" style="color: #2a2b38; display: flex;flex-direction: column;justify-content: center;"></i>
+    </div>
+ 
   </div>
-  
+  <button type="submit" class="btn">Add Prime</button>
+</form>
+</div>

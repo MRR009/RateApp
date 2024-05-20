@@ -1,4 +1,4 @@
-<p>heloo</p>
+<!-- <p>heloo</p>
 
 <div class="container">
     <h1 class="title">Ceiling component</h1>
@@ -27,6 +27,48 @@
         </form>
       </div>
     </div>
+  </div> -->
+
+
+  <!-- example -->
+
+
+  <div>
+    <h1 class="title">Ceiling component</h1>
+    <form  [formGroup]="ceilingForm" (ngSubmit)="addCeiling()">
+    <div class="container1">
+     
+       <div class="column">
+        <div style=" display: flex; width: 100%;">
+          <label for="compositeRateOverallFloor" class="label">CompositeRateOverallFloor </label>
+          <span *ngIf="isTitleRequired" class="red-star">*</span>
+        </div>
+        <input type="number" id="compositeRateOverallFloor" name="compositeRateOverallFloor" class="form-control" formControlName="compositeRateOverallFloor">
+       </div>
+  
+       <div class="column">
+        <div style=" display: flex; width: 100%;">
+          <label for="compositeRateOverallCeiling" class="label">compositeRateOverallCeiling</label>
+          <span *ngIf="isTitleRequired" class="red-star">*</span>
+        </div>
+        <input type="number" id="compositeRateOverallCeiling" name="compositeRateOverallCeiling" class="form-control" formControlName="compositeRateOverallCeiling">
+      </div>
+  
+      <div class="column">
+        <div style=" display: flex; width: 60%;">
+          <label for="rateId" class="label">Rate Id</label>
+          <span *ngIf="isTitleRequired" class="red-star">*</span>
+        </div>
+        <input type="number" id="rateId" name="rateId" class="form-control" formControlName="rateId">
+      </div>
+  
+  
+  
+  
+      
+    </div>
+    <button type="submit" class="btn">Add Prime</button>
+  </form>
   </div>
   
 
